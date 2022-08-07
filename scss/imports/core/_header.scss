@@ -1,0 +1,106 @@
+.header {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+
+    .container-fuild {
+        @include flex(space-between);
+        height: 100%;
+    }
+    &__logo {
+        img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        z-index: 200;
+    }
+    &__menu {
+        @include mid;
+        ul {
+            display: flex;
+            list-style: none;
+            width: 100%;
+
+            a {
+                padding: 0 35px;
+                text-decoration: none;
+                @include style($fsnav, pb, 23px, $white-cl);
+
+                &:hover {
+                    color: $yellow-cl;
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: inline-flex;
+        align-items: center;
+        &-lang {
+            position: relative;
+            // margin-right: 20px;
+            .current {
+                @include flex(center);
+                cursor: pointer;
+                .lang {
+                    @include style($fsnav, pb, 23px, $white-cl);
+                }
+
+                img {
+                    margin-left: 5px;
+                }
+            }
+            &:hover {
+                .select {
+                    display: block;
+                }
+            }
+
+            .select {
+                display: none;
+                width: 50px;
+                height: auto;
+                padding: 10px;
+                position: absolute;
+                background: $white-cl;
+                text-align: center;
+                a {
+                    color: $black-cl;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    //tablet
+    @include sm {
+        &__menu {
+            display: none;
+        }
+        &__logo {
+            img {
+                width: 150px;
+            }
+        }
+        &__right {
+            display: inline-flex;
+            align-items: center;
+            &-lang {
+                margin-right: 20px;
+            }
+        }
+    }
+    //mobile
+    @include xs {
+        background: $black-cl;
+        &__menu {
+            display: none;
+        }
+        &__logo {
+            img {
+                width: 130px;
+            }
+        }
+    }
+}
