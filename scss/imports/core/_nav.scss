@@ -1,0 +1,51 @@
+.container-fuild {
+    .header__right-nav {
+        .hamburger {
+            display: none;
+            position: relative;
+            cursor: pointer;
+            div {
+                width: 35px;
+                height: 5px;
+                background: $white-cl;
+                margin: 6px 0;
+            }
+            z-index: 300;
+        }
+        .hamburger__block {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: $black-cl;
+            z-index: 10;
+            ul {
+                @include mid;
+                li {
+                    margin: 15px auto;
+                    text-align: center;
+                    a {
+                        text-decoration: none;
+                        color: $white-cl;
+                        transform: skew(0deg);
+                        &:hover {
+                            transform: skew(10deg);
+                        }
+                    }
+                }
+            }
+        }
+        @include sm {
+            .hamburger {
+                display: block;
+            }
+            &:hover {
+                .hamburger__block {
+                    display: block;
+                }
+            }
+        }
+    }
+}
