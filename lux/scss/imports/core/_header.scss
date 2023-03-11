@@ -1,0 +1,27 @@
+// css header
+.header {
+    &__content {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-menu {
+            ul {
+                display: flex;
+                a {
+                    padding: 15px;
+                    @include text(13px, "mr", 1, $dard-cl);
+                }
+            }
+        }
+        &-contact {
+            @include text(13px, "mr", 1, $dard-cl);
+            .btn-getting {
+                padding: 15px 20px;
+                background: $yl-cl;
+                border-radius: 5px;
+                margin-left: 25px;
+            }
+        }
+    }
+}

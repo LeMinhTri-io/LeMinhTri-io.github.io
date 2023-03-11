@@ -1,0 +1,71 @@
+// css footer
+.footer {
+    padding: 65px 0 85px;
+    background: $dard-cl;
+    &__content {
+        &-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: flex-end;
+            position: relative;
+            padding-bottom: 50px;
+            height: 100%;
+            &::after {
+                content: "";
+                @include size(100%, 1px);
+                background: #8290a2;
+                position: absolute;
+                bottom: 0;
+            }
+            .heading {
+                color: $white-cl;
+            }
+            .form-group {
+                position: relative;
+                input {
+                    @include size(100%, 50px);
+                    padding: 0 30px;
+                    @include text(15px, "mr", 1, #919eb1);
+                }
+                .icon-arow {
+                    position: absolute;
+                    right: 30px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &-textbox {
+            padding-top: 90px;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            .footer-left {
+                display: flex;
+                flex-direction: column;
+                .copyright {
+                    max-width: 130px;
+                    margin-top: 60px;
+                    @include text(14px, "mr", 21px, $white-cl);
+                }
+            }
+            .listnav {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                .nav {
+                    display: flex;
+                    flex-direction: column;
+                    .title {
+                        @include text(13px, "mr", 1, #919eb1);
+                        margin-bottom: 40px;
+                    }
+                    .detail {
+                        @include text(13px, "mr", 1, $white-cl);
+                        &:not(:last-child) {
+                            margin-bottom: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
