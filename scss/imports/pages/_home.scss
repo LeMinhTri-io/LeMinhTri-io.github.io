@@ -1,0 +1,437 @@
+.main {
+    .banner {
+        position: relative;
+        .container {
+            position: relative;
+            height: 100%;
+        }
+        background: url(/img/banner__hero.jpg) no-repeat center;
+        background-size: cover;
+        &::after {
+            content: "";
+            position: absolute;
+            @include size(100%);
+            background: $black-cl;
+            opacity: 0.1;
+            top: 0;
+        }
+        @include size(100%, 700px);
+        &__content {
+            &-textbox {
+                position: relative;
+                z-index: 1;
+                .heading {
+                    @include text(62px, "mb", 78px, $dard-cl);
+                    max-width: 630px;
+                    padding: 150px 0 50px;
+                }
+                .form-group {
+                    position: relative;
+                    margin-bottom: 105px;
+                    .ic-search {
+                        position: absolute;
+                        left: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    input {
+                        height: 70px;
+                        border: none;
+                        outline: none;
+                    }
+                    input[type="search"] {
+                        width: 370px;
+                        border-bottom-left-radius: 5px;
+                        border-top-left-radius: 5px;
+                        padding-left: 50px;
+                        @include text(15px, "mr", 1, #919eb1);
+                    }
+                    input[type="submit"] {
+                        padding: 25px 30px;
+                        background: $yl-cl;
+                        border-bottom-right-radius: 5px;
+                        border-top-right-radius: 5px;
+                        margin-left: -5px;
+                        cursor: pointer;
+                        @include text(15px, "mm", 1, $dard-cl);
+                    }
+                }
+                .scrolldow {
+                    position: relative;
+                    cursor: pointer;
+                    .textbanner {
+                        display: inline-block;
+                        transform: rotate(-90deg);
+                        position: absolute;
+                        left: -28px;
+                        @include text(12px, "mm", 1, #818181);
+                    }
+                    .ic-scr {
+                        transform: rotate(360deg);
+                        margin-top: 70px;
+                    }
+                }
+            }
+            &-contact {
+                display: flex;
+                position: absolute;
+                bottom: 0;
+                right: 15px;
+                z-index: 2;
+                .box {
+                    padding: 25px 40px;
+                    background: $yl-cl;
+                    @include mid(true);
+                    .text {
+                        margin-left: 35px;
+                        @include text(18px, "ms", 1, $dard-cl);
+                    }
+                }
+            }
+        }
+    }
+    .company {
+        padding: 75px 0;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            &-textbox {
+                .heading {
+                    max-width: 350px;
+                }
+                .desc {
+                    margin-top: 42px;
+                }
+            }
+            &-box {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                gap: 30px;
+                .item {
+                    @include size(200px);
+                    @include mid(true);
+                    flex-direction: column;
+                    background: #f6f5f4;
+                    .number {
+                        @include text(40px, "ms", 50px, $yl-cl);
+                    }
+                    .text {
+                        @include text(14px, "ms", 40px, $dard-cl);
+                    }
+                }
+            }
+        }
+    }
+    .appartment {
+        background-color: #f6f5f4;
+        padding: 85px 0;
+        &__content {
+            .heading {
+                max-width: 470px;
+                margin-bottom: 50px;
+            }
+            &-box {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            &-btn {
+                text-align: center;
+                margin-top: 70px;
+                .btn {
+                    padding: 25px 45px;
+                    background: $white-cl;
+                    @include text(15px, "mr", 1, $dard-cl);
+                    transition: $t;
+                    &:hover {
+                        background: $yl-cl;
+                        color: $white-cl;
+                        transition: $t;
+                    }
+                }
+            }
+        }
+    }
+    .howitwwork {
+        padding: 75px 90px;
+        &__content {
+            &-textbox {
+                .desc {
+                    max-width: 380px;
+                    margin: 10px 0 50px;
+                }
+            }
+            &-box {
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 35px;
+                .item {
+                    &.--bgr-yellow {
+                        background: $yl-cl;
+                        .--white-cl {
+                            color: $white-cl;
+                        }
+                    }
+                    height: 100%;
+                    box-shadow: 0 0 15px 15px #f6f7f7;
+                    padding: 45px;
+                    .number {
+                        @include text(100px, "mb", 1, $black-cl);
+                    }
+                    .content {
+                        display: flex;
+                        .numbermini {
+                            &.--white-cl {
+                                color: $white-cl;
+                            }
+                            margin-right: 20px;
+                            @include text(18px, "ms", 63px, $black-cl);
+                        }
+                        .detail {
+                            .title {
+                                &.--white-cl {
+                                    color: $white-cl;
+                                }
+                                @include text(18px, "ms", 63px, $black-cl);
+                            }
+                            .btn-find {
+                                &.--white-cl {
+                                    color: $white-cl;
+                                    &::after {
+                                        background: $white-cl;
+                                    }
+                                }
+                                display: inline-block;
+                                @include text(13px, "ms", 30px, $black-cl);
+                                position: relative;
+                                margin-top: 10px;
+                                &::after {
+                                    position: absolute;
+                                    content: "";
+                                    @include size(0, 2px);
+                                    transition: $t;
+                                    background: $black-cl;
+                                    bottom: 0;
+                                    left: 0;
+                                }
+                                &:hover {
+                                    &::after {
+                                        width: 100%;
+                                        transition: $t;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .services {
+        padding-bottom: 80px;
+        &__content {
+            &-textbox {
+                .desc {
+                    max-width: 380px;
+                    margin: 10px 0 50px;
+                }
+            }
+            &-intro {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                .img {
+                    position: relative;
+                    overflow: hidden;
+                    padding-bottom: calc((539 / 630) * 100%);
+                    img {
+                        @include midimg(100%);
+                    }
+                }
+                .list-desc {
+                    padding-left: 90px;
+                    .item {
+                        .title {
+                            @include text(25px, "ms", 50px, $dard-cl);
+                        }
+                    }
+                    .item:not(:last-child) {
+                        margin-bottom: 65px;
+                    }
+                }
+            }
+        }
+    }
+    .agent {
+        padding: 80px 0;
+        background: #f6f5f4;
+        &__content {
+            &-textbox {
+                .desc {
+                    max-width: 390px;
+                    margin: 10px 0 50px;
+                }
+            }
+            &-box {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 30px;
+            }
+        }
+    }
+    .details {
+        padding: 90px 0;
+        &__content {
+            &-item {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                &:not(:last-child) {
+                    margin-bottom: 90px;
+                }
+                &:nth-child(2) {
+                    direction: rtl;
+                    .img {
+                        .btn-location {
+                            left: initial;
+                            right: 35px;
+                            .text {
+                                margin-left: initial;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                    .textbox {
+                        padding-left: initial;
+                        padding-right: 120px;
+                    }
+                }
+                .img {
+                    position: relative;
+                    padding-bottom: calc((331 / 541) * 100%);
+                    .imgdetail {
+                        @include midimg(100%);
+                    }
+                    .btn-location {
+                        @include mid(true);
+                        position: absolute;
+                        padding: 20px 50px;
+                        background: $yl-cl;
+                        bottom: -30px;
+                        left: 35px;
+                        .text {
+                            @include text(18px, "ms", 1, $dard-cl);
+                            margin-left: 20px;
+                        }
+                    }
+                }
+                .textbox {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding-left: 120px;
+                    .title {
+                        @include text(25px, "ms", 50px, $dard-cl);
+                        margin-bottom: 10px;
+                    }
+                    .btn-showmemore {
+                        margin-top: 50px;
+                        width: max-content;
+                        padding: 25px 50px;
+                        background: $dard-cl;
+                        @include text(18px, "ms", 1, $white-cl);
+                        transition: $t;
+                        &:hover {
+                            background: $yl-cl;
+                            transition: $t;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contact {
+        background: #f6f5f4;
+        &__content {
+            display: grid;
+            grid-template-columns: 660px 1fr;
+            padding: 0 0 0 clamp(15px, calc(((100vw - 1120px) / 2)), 9999px);
+            &-form {
+                padding: 90px 220px 90px 0;
+                box-sizing: border-box;
+                .desc {
+                    max-width: 390px;
+                    margin: 10px 0;
+                }
+                .form-group {
+                    &.flex {
+                        display: flex;
+                        select {
+                            width: max-content;
+                        }
+                    }
+                    input,
+                    select,
+                    textarea {
+                        @include text(13px, "mr", 30px, #919eb1);
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        background: transparent;
+                        border-bottom: 1px solid #919eb1;
+                        line-height: 40px;
+                        margin-bottom: 10px;
+                    }
+                    input[type="checkbox"],
+                    input[type="radio"] {
+                        width: initial;
+                    }
+                    textarea {
+                        resize: none;
+                        line-height: 50px;
+                    }
+                    .btn-submit {
+                        border: none;
+                        background: $dard-cl;
+                        width: 100%;
+                        padding: 20px 0;
+                        color: $white-cl;
+                        line-height: initial;
+                        margin-top: 20px;
+                        transition: $t;
+                        &:hover {
+                            background: $yl-cl;
+                            transition: $t;
+                        }
+                    }
+                    .title {
+                        @include text(15px, "ms", 50px, $dard-cl);
+                    }
+                    .item {
+                        display: flex;
+                        label {
+                            margin-left: 5px;
+                            @include text(13px, "mr", 1, #919eb1);
+                        }
+                    }
+                    .choose {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .check {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+            &-img {
+                position: relative;
+                padding-bottom: 100%;
+                overflow: hidden;
+                .imgtouch {
+                    @include midimg(100%);
+                }
+            }
+        }
+    }
+}
